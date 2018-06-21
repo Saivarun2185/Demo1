@@ -10,7 +10,9 @@ var cors = require('cors')
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'my-app/dist/my-app'));
+app.use(express.static(path.join(__dirname, 'my-app/dist/my-app')));
+app.set('views', path.join(__dirname, 'my-app/dist/my-app'));
 app.set('view engine', 'ejs');
 app.use(cors())
 app.use(logger('dev'));
